@@ -2,18 +2,17 @@
 # define CONTACT_H
 
 #include <string>
-using namespace std;
 
 class Contact {
 
     public:
-        string  firstName;
-        string  lastName;
-        string  nickname;
-        int     phoneNumber;
-        string  darkestSecret;
+        std::string  firstName;
+        std::string  lastName;
+        std::string  nickname;
+        std::string  phoneNumber;
+        std::string  darkestSecret;
 
-        Contact newContact(string firstName, string lastName, string nickname, int phoneNumber, string darkestSecret);
+        Contact newContact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
 };
 
 #endif
