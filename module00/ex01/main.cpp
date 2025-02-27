@@ -38,13 +38,13 @@ int main(void)
     getline(std::cin, input);
     while (input != "exit")
     {
-        getline(std::cin, input);
         if (input == "add")
         {
             getContactInfo(&newctt);
             // cout << "first name: ";
             // getline(cin, newctt.firstName);
         }
+        getline(std::cin, input);
     }
     return (0);
 }
