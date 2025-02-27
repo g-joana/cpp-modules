@@ -3,33 +3,42 @@
 #include <iostream>
 #include <string>
 
-using namespace std ;
+// using namespace std ;
+void eraseCtt(Contact *ctt)
+{
+    ctt->firstName.clear();
+    ctt->lastName.clear();
+    ctt->nickname.clear();
+    ctt->phoneNumber.clear();
+    ctt->darkestSecret.clear();
+}
 
 void getContactInfo(Contact *newctt)
 {
-    cout << "first name: ";
-    getline(cin, newctt->firstName);
-    cout << "last name: ";
-    getline(cin, newctt->lastName);
-    cout << "nickname: ";
-    getline(cin, newctt->nickname);
-    cout << "phone number: ";
-    getline(cin, newctt->phoneNumber);
-    cout << "darkest secret: ";
-    getline(cin, newctt->darkestSecret);
+    std::cout << "first name: ";
+    getline(std::cin, newctt->firstName);
+    std::cout << "last name: ";
+    getline(std::cin, newctt->lastName);
+    std::cout << "nickname: ";
+    getline(std::cin, newctt->nickname);
+    std::cout << "phone number: ";
+    getline(std::cin, newctt->phoneNumber);
+    std::cout << "darkest secret: ";
+    getline(std::cin, newctt->darkestSecret);
     if (newctt->firstName.empty() || newctt->lastName.empty() || newctt->nickname.empty() || newctt->phoneNumber.empty() || newctt->darkestSecret.empty())
-        cout<< "is empty";
-        // eraseCtt(newctt);
+        eraseCtt(newctt);
+        // std::cout<< "is empty";
 }
 
 int main(void)
 {
-    string input;
+    std::string input;
     Contact newctt;
 
-    getline(cin, input);
+    getline(std::cin, input);
     while (input != "exit")
     {
+        getline(std::cin, input);
         if (input == "add")
         {
             getContactInfo(&newctt);
