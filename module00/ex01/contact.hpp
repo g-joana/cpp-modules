@@ -5,14 +5,18 @@
 
 class Contact {
 
-    public:
+    private:
         std::string  firstName;
         std::string  lastName;
         std::string  nickname;
         std::string  phoneNumber;
         std::string  darkestSecret;
 
-        Contact newContact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
+    public:
+
+        Contact();
+        Contact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
+        // ~Contact();
 };
 
 #endif

@@ -5,11 +5,14 @@
 class PhoneBook {
 
     public:
-        Contact *phonebook[8];
+        Contact list[8];
         int len;
         
-        void add(Contact newctt, Contact *phonebook);
-        void search(Contact newctt, Contact *phonebook);
+        PhoneBook();
+        void addContact();
+        void searchContact();
+
+        // ~PhoneBook();
 };
 
 #endif

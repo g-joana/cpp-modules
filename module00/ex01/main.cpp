@@ -3,46 +3,53 @@
 #include <iostream>
 #include <string>
 
-// using namespace std ;
-void eraseCtt(Contact *ctt)
+void newContact(PhoneBook *phonebook)
 {
-    ctt->firstName.clear();
-    ctt->lastName.clear();
-    ctt->nickname.clear();
-    ctt->phoneNumber.clear();
-    ctt->darkestSecret.clear();
-}
+    std::string  firstName;
+    std::string  lastName;
+    std::string  nickname;
+    std::string  phoneNumber;
+    std::string  darkestSecret;
 
-void getContactInfo(Contact *newctt)
-{
     std::cout << "first name: ";
-    getline(std::cin, newctt->firstName);
+    getline(std::cin, firstName);
     std::cout << "last name: ";
-    getline(std::cin, newctt->lastName);
+    getline(std::cin, lastName);
     std::cout << "nickname: ";
-    getline(std::cin, newctt->nickname);
+    getline(std::cin, nickname);
     std::cout << "phone number: ";
-    getline(std::cin, newctt->phoneNumber);
+    getline(std::cin, phoneNumber);
     std::cout << "darkest secret: ";
-    getline(std::cin, newctt->darkestSecret);
-    if (newctt->firstName.empty() || newctt->lastName.empty() || newctt->nickname.empty() || newctt->phoneNumber.empty() || newctt->darkestSecret.empty())
-        eraseCtt(newctt);
-        // std::cout<< "is empty";
+    getline(std::cin, darkestSecret);
+    if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
+    {
+        firstName.clear();
+        lastName.clear();
+        nickname.clear();
+        phoneNumber.clear();
+        darkestSecret.clear();
+    }
+    else
+    {
+        std::cout << phonebook->len;
+        phonebook->list[phonebook->len] = Contact(firstName, lastName, nickname, phoneNumber, darkestSecret);
+        if (phonebook->len < 7)
+            phonebook->len++;
+    }
 }
 
 int main(void)
 {
+
     std::string input;
-    Contact newctt;
+    PhoneBook phonebook;
 
     getline(std::cin, input);
     while (input != "exit")
     {
         if (input == "add")
         {
-            getContactInfo(&newctt);
-            // cout << "first name: ";
-            // getline(cin, newctt.firstName);
+            newContact(&phonebook);
         }
         getline(std::cin, input);
     }
