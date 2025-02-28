@@ -15,9 +15,11 @@ class Contact {
     public:
 
         Contact();
+
         Contact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
 
-        void displayContact();
+        void displayContactDetails();
+        void displayContactName();
 
         // ~Contact();
 };

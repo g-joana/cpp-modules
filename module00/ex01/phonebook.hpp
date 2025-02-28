@@ -4,12 +4,14 @@
 
 class PhoneBook {
 
-    public:
+    private:
         Contact list[8];
         int len;
         
+    public:
         PhoneBook();
         void addContact();
+        void displayAllContacts();
         void searchContact();
 
         // ~PhoneBook();
