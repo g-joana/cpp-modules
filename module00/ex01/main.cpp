@@ -22,13 +22,7 @@ void newContact(PhoneBook *phonebook)
     std::cout << "darkest secret: ";
     getline(std::cin, darkestSecret);
     if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
-    {
-        firstName.clear();
-        lastName.clear();
-        nickname.clear();
-        phoneNumber.clear();
-        darkestSecret.clear();
-    }
+        return ;
     else
     {
         std::cout << phonebook->len;
@@ -50,6 +44,10 @@ int main(void)
         if (input == "add")
         {
             newContact(&phonebook);
+        }
+        else if (input == "search")
+        {
+            phonebook.searchContact();
         }
         getline(std::cin, input);
     }

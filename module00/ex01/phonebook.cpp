@@ -9,6 +9,22 @@ PhoneBook::PhoneBook()
     // list[0] = Contact();
 }
 
+void PhoneBook::searchContact() {
+    int count = 0;
+
+    if (len == 0)
+    {
+        std::cout << "No contacts registered" << std::endl;
+        return;
+    }
+    while (count <= len) {
+        std::cout << count + 1 << "|";
+        list[count].displayContact();
+        std::cout << std::endl;
+        count++;
+    }
+}
+
 // void PhoneBook::addContact()
 // {
 //     std::string  firstName;

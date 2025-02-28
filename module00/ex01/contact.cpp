@@ -1,14 +1,14 @@
 #include "contact.hpp"
-// #include <iostream>
+#include <iostream>
 #include <string>
 
 Contact::Contact()
 {
-    firstName = "unknown";
-    lastName = "unknown";
-    nickname = "unkonown";
-    phoneNumber = "unknown";
-    darkestSecret = "unknown";
+    firstName = "";
+    lastName = "";
+    nickname = "";
+    phoneNumber = "";
+    darkestSecret = "";
 }
 
 Contact::Contact(std::string fName, std::string lName, std::string nick, std::string number, std::string secret)
@@ -18,4 +18,9 @@ Contact::Contact(std::string fName, std::string lName, std::string nick, std::st
     nickname = nick;
     phoneNumber = number;
     darkestSecret = secret;
+}
+
+void Contact::displayContact()
+{
+    std::cout << firstName << "|" << lastName << "|" << nickname << "|";
 }
