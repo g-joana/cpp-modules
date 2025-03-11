@@ -20,7 +20,7 @@ void PhoneBook::displayAllContacts() {
         return;
     }
     std::cout << "index     " << "|" << "first name" << "|" << "last name " << "|" << "nickname  " << std::endl;
-    while (count <= len) {
+    while (count < len) {
         std::cout << count + 1 << "         " << "|";
         list[count].displayContactName();
         std::cout << std::endl;
