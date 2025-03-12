@@ -20,7 +20,7 @@ Contact::Contact(std::string fName, std::string lName, std::string nick, std::st
     darkestSecret = secret;
 }
 
-void Contact::displayContactName()
+void Contact::displayContactPreview()
 {
     std::cout << firstName.substr(0, 9);
     if(firstName.length() >= 10)
@@ -46,9 +46,9 @@ void Contact::displayContactName()
 
 void Contact::displayContactDetails()
 {
-    std::cout << firstName << std::endl;
-    std::cout << lastName << std::endl;
-    std::cout << nickname << std::endl;
-    std::cout << phoneNumber << std::endl;
-    std::cout << darkestSecret << std::endl;
+    std::cout << "first name: " << firstName << std::endl;
+    std::cout << "last name: " << lastName << std::endl;
+    std::cout << "nickname: " << nickname << std::endl;
+    std::cout << "phone number: " << phoneNumber << std::endl;
+    std::cout << "darkest secret: " << darkestSecret << std::endl;
 }

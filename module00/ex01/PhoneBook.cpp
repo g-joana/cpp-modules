@@ -14,15 +14,16 @@ PhoneBook::PhoneBook()
 void PhoneBook::displayAllContacts() {
     int count = 0;
 
+    std::cout << std::endl;
     if (len == 0)
     {
-        std::cout << "No contacts registered" << std::endl;
+        std::cout << "no contacts registered" << std::endl;
         return;
     }
     std::cout << "index     " << "|" << "first name" << "|" << "last name " << "|" << "nickname  " << std::endl;
     while (count < len) {
         std::cout << count + 1 << "         " << "|";
-        list[count].displayContactName();
+        list[count].displayContactPreview();
         std::cout << std::endl;
         count++;
     }
@@ -61,6 +62,9 @@ void PhoneBook::searchContact()
     std::string input;
     int index;
 
+    if (len == 0)
+        return ;
+    std::cout << std::endl;
     std::cout << "enter desired index: ";
     getline(std::cin, input);
     if (input.length() > 1)
@@ -68,12 +72,13 @@ void PhoneBook::searchContact()
        std::cerr << "index not valid" << std::endl;
        return ;
     }
-    // index = std::stoi(input);
     index = std::atoi(input.c_str());
     if (index < 1 || index > 8 || index > len)
     {
         std::cerr << "index not valid" << std::endl;
         return ;
     }
+    std::cout << std::endl;
     list[index - 1].displayContactDetails();
+    std::cout << std::endl;
 }

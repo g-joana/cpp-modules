@@ -19,7 +19,7 @@ class Contact {
         Contact(std::string firstName, std::string lastName, std::string nickname, std::string phoneNumber, std::string darkestSecret);
 
         void displayContactDetails();
-        void displayContactName();
+        void displayContactPreview();
 
         // ~Contact();
 };
