@@ -6,8 +6,9 @@ int main (void) {
     while (1) {
         std::cout << "zombie name: ";
         getline(std::cin, zombieName);
-        Zombie *zombie = newZombie(zombieName);
-        zombie->announce();
+        // Zombie *zombie = newZombie(zombieName);
+        Zombie z1(zombieName);
+        z1.announce();
         break ;
     }
 }
