@@ -5,26 +5,23 @@
 // }
 
 int main (void) {
-    std::string zombieName;
+    std::string name;
     
     while (1) {
         std::cout << "zombie name: ";
-        getline(std::cin, zombieName);
-        // Zombie *zombie = newZombie(zombieName);
-        if (zombieName == "random")
+        getline(std::cin, name);
+        if (name == "random")
         {
-            // free(zombieName);
-            // zombieName = random();
-            zombieName = "tiago";
-            Zombie z1(zombieName);
+            name = "tiago";
+            Zombie z1(name);
             z1.announce();
         }
         else
         {
-            Zombie *z = newZombie(zombieName);
+            Zombie *z = newZombie(name);
             z->announce();
+            delete z;
         }
-
         std::cout << std::endl;
     }
 }
