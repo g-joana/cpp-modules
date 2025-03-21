@@ -4,20 +4,20 @@
 
 Contact::Contact()
 {
-    firstName = "";
-    lastName = "";
-    nickname = "";
-    phoneNumber = "";
-    darkestSecret = "";
+    this->firstName = "";
+    this->lastName = "";
+    this->nickname = "";
+    this->phoneNumber = "";
+    this->darkestSecret = "";
 }
 
 Contact::Contact(std::string fName, std::string lName, std::string nick, std::string number, std::string secret)
 {
-    firstName = fName;
-    lastName = lName;
-    nickname = nick;
-    phoneNumber = number;
-    darkestSecret = secret;
+    this->firstName = fName;
+    this->lastName = lName;
+    this->nickname = nick;
+    this->phoneNumber = number;
+    this->darkestSecret = secret;
 }
 
 void Contact::displayContactPreview()
@@ -46,9 +46,9 @@ void Contact::displayContactPreview()
 
 void Contact::displayContactDetails()
 {
-    std::cout << "first name: " << firstName << std::endl;
-    std::cout << "last name: " << lastName << std::endl;
-    std::cout << "nickname: " << nickname << std::endl;
-    std::cout << "phone number: " << phoneNumber << std::endl;
-    std::cout << "darkest secret: " << darkestSecret << std::endl;
+    std::cout << "first name: " << this->firstName << std::endl;
+    std::cout << "last name: " << this->lastName << std::endl;
+    std::cout << "nickname: " << this->nickname << std::endl;
+    std::cout << "phone number: " << this->phoneNumber << std::endl;
+    std::cout << "darkest secret: " << this->darkestSecret << std::endl;
 }

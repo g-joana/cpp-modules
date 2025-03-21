@@ -7,8 +7,7 @@
 
 PhoneBook::PhoneBook()
 {
-    len = 0;
-    // list[0] = Contact();
+    this->len = 0;
 }
 
 void PhoneBook::displayAllContacts() {
@@ -64,8 +63,7 @@ void PhoneBook::searchContact()
 
     if (len == 0)
         return ;
-    std::cout << std::endl;
-    std::cout << "enter desired index: ";
+    std::cout << std::endl << "enter desired index: ";
     getline(std::cin, input);
     if (input.length() > 1)
     {

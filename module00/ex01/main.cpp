@@ -1,11 +1,9 @@
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 #include <iostream>
 #include <string>
 
 int main(void)
 {
-
     std::string input;
     PhoneBook phonebook;
 
