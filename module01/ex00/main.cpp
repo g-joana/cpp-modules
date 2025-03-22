@@ -1,21 +1,13 @@
 #include "Zombie.hpp"
 
-// std::string random() {
-//
-// }
-
 int main (void) {
     std::string name;
     
     while (1) {
-        std::cout << "zombie name: ";
+        std::cout << "Who is that zombie? ";
         getline(std::cin, name);
-        if (name == "random")
-        {
-            name = "tiago";
-            Zombie z1(name);
-            z1.announce();
-        }
+        if (name == "idk")
+            randomChump("juan");
         else
         {
             Zombie *z = newZombie(name);
