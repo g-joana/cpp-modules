@@ -12,7 +12,7 @@ class Fixed {
         Fixed(Fixed& copy);
         ~Fixed();
 
-        int setRawBits( int const raw );
+        void setRawBits( int const raw );
         int getRawBits( void ) const;
 };
 

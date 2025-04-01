@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-    number = 0;
+    this->number = 0;
     std::cout << "Default constructor called" << std::endl;
 }
 
@@ -12,6 +12,11 @@ Fixed::Fixed(Fixed& copy) {
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
+}
+
+void Fixed::setRawBits(const int raw) {
+    std::cout << "getRawBits member function called" << std::endl;
+    this->number = raw;
 }
 
 int Fixed::getRawBits() const {
