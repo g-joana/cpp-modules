@@ -15,7 +15,7 @@ class Fixed {
         Fixed(const Fixed& copy);
         ~Fixed();
 
-        Fixed operator<<(Fixed &src);
+        std::ostream &operator<<( Fixed const& src );
         void setRawBits( int const raw );
         int getRawBits( void ) const;
 

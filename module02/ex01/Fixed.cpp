@@ -1,5 +1,7 @@
 #include "Fixed.hpp"
 #include <ostream>
+// https://en.cppreference.com/w/cpp/language/operators
+// https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html
 
 Fixed::Fixed() {
     this->number = 0;
@@ -25,7 +27,8 @@ Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
 
-std::ostream &operator<<( std::ostream & stream, Fixed const &src ){
+std::ostream Fixed::operator<<( Fixed const &src ){
+    std::ostream stream;
     stream << src.toFloat();
     return stream;
 }
