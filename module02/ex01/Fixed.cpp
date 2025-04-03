@@ -2,6 +2,7 @@
 #include <ostream>
 // https://en.cppreference.com/w/cpp/language/operators
 // https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html
+// https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
 
 Fixed::Fixed() {
     this->number = 0;
