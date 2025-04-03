@@ -1,4 +1,5 @@
 #include "Fixed.hpp"
+#include <ostream>
 
 Fixed::Fixed() {
     this->number = 0;
@@ -12,27 +13,30 @@ Fixed::Fixed(const int n) {
 
 Fixed::Fixed(const float n) {
     std::cout << "Float constructor called" << std::endl;
-    this->number = n * (1 << this->fractionBits);
+    this->number = roundf(n * (1 << this->fractionBits));
 }
 
-Fixed::Fixed(Fixed& copy) {
+Fixed::Fixed(const Fixed& src) {
     std::cout << "Copy constructor called" << std::endl;
-    this->number = copy.getRawBits();
+    this->number = src.getRawBits();
 }
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::toInt( void ) const {
-    int ret;
-    ret = this->number >> this->fractionBits;
-    return ret;
+std::ostream &operator<<( std::ostream & stream, Fixed const &src ){
+    stream << src.toFloat();
+    return stream;
 }
 
+int Fixed::toInt( void ) const {
+    return this->number >> this->fractionBits; // getRawBits?
+}
 
-// float Fixed::toFloat( void ) const {
-// }
+float Fixed::toFloat( void ) const {
+    return (float(this->getRawBits()) / (1 << fractionBits));
+}
 
 void Fixed::setRawBits(const int raw) {
     std::cout << "getRawBits member function called" << std::endl;
