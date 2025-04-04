@@ -21,15 +21,23 @@ Fixed::Fixed(const float n) {
 
 Fixed::Fixed(const Fixed& src) {
     std::cout << "Copy constructor called" << std::endl;
-    this->number = src.getRawBits();
+    // this->number = src.number;
+    *this = src;
+    // copy assignment operator
 }
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;
 }
 
-std::ostream Fixed::operator<<( Fixed const &src ){
-    std::ostream stream;
+Fixed&  Fixed::operator=(const Fixed &src) {
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &src)
+        this->number = src.number;
+    return *this;
+}
+
+std::ostream &operator<<(std::ostream& stream, Fixed const& src ){
     stream << src.toFloat();
     return stream;
 }
