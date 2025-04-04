@@ -13,10 +13,24 @@ class Fixed {
         Fixed();
         Fixed(int n);
         Fixed(float n);
-        Fixed(const Fixed& copy);
+        Fixed(const Fixed& src);
         ~Fixed();
 
-        Fixed&  operator=(const Fixed &src);
+        Fixed&  operator=(const Fixed& src);
+        bool    operator>(const Fixed& src);
+        bool    operator<(const Fixed& src);
+        bool    operator>=(const Fixed& src);
+        bool    operator<=(const Fixed& src);
+        bool    operator==(const Fixed& src);
+        bool    operator!=(const Fixed& src);
+        Fixed  operator+(const Fixed& src);
+        Fixed  operator-(const Fixed& src);
+        Fixed  operator*(const Fixed& src);
+        Fixed  operator/(const Fixed& src);
+        Fixed  operator++(int i);
+        Fixed  operator--(int i);
+        Fixed  operator++();
+        Fixed  operator--();
 
         void setRawBits( int const raw );
         int getRawBits( void ) const;
