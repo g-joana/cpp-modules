@@ -3,6 +3,8 @@
 // https://en.cppreference.com/w/cpp/language/operators
 // https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html
 // https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
+// https://en.cppreference.com/w/cpp/language/operators
+// https://www.francescmm.com/orthodox-canonical-class-form/
 
 // constructors
 Fixed::Fixed() {
@@ -73,6 +75,7 @@ int Fixed::getRawBits() const {
 }
 
 // operator overloading
+// https://stackoverflow.com/questions/422600/canonical-operator-overloading
 std::ostream &operator<<(std::ostream& stream, Fixed const& src ){
     stream << src.toFloat();
     return stream;
