@@ -14,7 +14,7 @@ Cat::~Cat() {
 }
 
 Cat& Cat::operator=(Cat& src) {
-    std::cout << "Dog copy assignment operator" << std::endl;
+    std::cout << "Cat copy assignment operator" << std::endl;
     if (this == &src)
         return src;
     this->type = src.type;
