@@ -1,5 +1,4 @@
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include <string>
 
@@ -11,9 +10,8 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
     this->attackDamage = 30;
 }
 
-FragTrap::FragTrap(FragTrap& src): ClapTrap(src.name) {
+FragTrap::FragTrap(FragTrap& src): ClapTrap(src) {
     std::cout << "FragTrap copy constructor called" << std::endl;
-    *this = src;
 }
 
 FragTrap::~FragTrap() {
@@ -21,7 +19,12 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap& FragTrap::operator=(FragTrap& src) {
-    *this = src;
+    if(this == &src)
+        return *this;
+    this->name = src.name;
+    this->hitPoints = src.hitPoints;
+    this->energyPoints = src.energyPoints;
+    this->attackDamage = src.attackDamage;
     return *this;
 }
 

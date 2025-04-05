@@ -6,7 +6,7 @@ int main() {
     ClapTrap first("clap");
     ScavTrap second("scav");
     FragTrap third("frag");
-    FragTrap fourth(*third);
+    FragTrap fourth(third);
     
     first.attack("scav");
     second.takeDamage(3); // first.attackDamage
