@@ -128,6 +128,28 @@ int Fixed::getRawBits() const {
     return this->number;
 }
 
+//  min and max
+Fixed&   Fixed::min(Fixed& a, Fixed& b){
+    if (a < b)
+        return a;
+    return b;
+}
+const Fixed&   Fixed::min(const Fixed& a, const Fixed& b){
+    if (a.getRawBits() < b.getRawBits())
+        return a;
+    return b;
+}
+Fixed&   Fixed::max(Fixed& a, Fixed& b){
+    if (a > b)
+        return a;
+    return b;
+}
+const Fixed&   Fixed::max(const Fixed& a, const Fixed& b){
+    if (a.getRawBits() > b.getRawBits())
+        return a;
+    return b;
+}
+
 // operator overloading
 // https://stackoverflow.com/questions/422600/canonical-operator-overloading
 std::ostream &operator<<(std::ostream& stream, Fixed const& src ){
