@@ -13,7 +13,7 @@ class Cat: public Animal {
         Cat(Cat& src);
         ~Cat();
         Cat& operator=(Cat& src);
-        void makeSound();
+        void makeSound() const;
 
 };
 

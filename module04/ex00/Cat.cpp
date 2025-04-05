@@ -4,9 +4,9 @@ Cat::Cat(): Animal("Cat") {
     std::cout << "Cat default constructor" << std::endl;
 }
 
-Cat::Cat(Cat& src): Animal("Cat") {
+Cat::Cat(Cat& src): Animal(src) {
     std::cout << "Cat copy constructor" << std::endl;
-    *this = src;
+    // *this = src;
 }
 
 Cat::~Cat() {
@@ -14,13 +14,13 @@ Cat::~Cat() {
 }
 
 Cat& Cat::operator=(Cat& src) {
-    std::cout << "Cat copy assignment operator" << std::endl;
+    std::cout << "Dog copy assignment operator" << std::endl;
     if (this == &src)
         return src;
     this->type = src.type;
     return *this;
 }
 
-void Cat::makeSound() {
+void Cat::makeSound() const {
     std::cout << "miauuu" << std::endl;
 }
