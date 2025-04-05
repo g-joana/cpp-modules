@@ -25,3 +25,7 @@ Animal& Animal::operator=(Animal& src) {
     this->type = src.type;
     return *this;
 }
+
+std::string Animal::getType() {
+    return this->type;
+}

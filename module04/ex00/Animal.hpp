@@ -13,6 +13,7 @@ class Animal {
         Animal(Animal& src);
         ~Animal();
         Animal& operator=(Animal& src);
+        std::string getType();
 };
 
 #endif
