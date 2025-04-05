@@ -1,6 +1,6 @@
-NAME = brain
+NAME = trap
 
-SRC = main.cpp
+SRC = main.cpp ClapTrap.cpp
 COMPILER = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
