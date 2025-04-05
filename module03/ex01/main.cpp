@@ -2,14 +2,14 @@
 #include "ScavTrap.hpp"
 
 int main() {
-    ClapTrap first("first");
-    ScavTrap second("second");
+    ClapTrap first("clap");
+    ScavTrap second("scav");
     
-    first.attack("second");
+    first.attack("scav");
     second.takeDamage(3); // first.attackDamage
     // second.printStatus();
 
-    second.attack("first");
+    second.attack("clap");
     first.takeDamage(4);
     // first.printStatus();
 
