@@ -19,6 +19,5 @@ class Zombie {
 
 Zombie* zombieHorde( int N, std::string name );
 
-
 // https://isocpp.org/wiki/faq/big-picture#why-use-oo
 #endif
