@@ -6,6 +6,8 @@ int main (void) {
     while (1) {
         std::cout << "Who is that zombie? ";
         getline(std::cin, name);
+         if (name == "exit")
+            return (0);
         if (name == "")
             randomChump("juan");
         else
@@ -16,4 +18,5 @@ int main (void) {
         }
         std::cout << std::endl;
     }
+    return (0);
 }
