@@ -19,7 +19,7 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap& FragTrap::operator=(FragTrap& src) {
-    std::cout << "ClapTrap copy assignment operator overload called" << std::endl;
+    std::cout << "FragTrap copy assignment operator overload called" << std::endl;
     if(this == &src)
         return *this;
     this->name = src.name;
