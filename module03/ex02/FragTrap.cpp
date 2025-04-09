@@ -29,11 +29,15 @@ FragTrap& FragTrap::operator=(FragTrap& src) {
 }
 
 void FragTrap::attack(const std::string& target){
+    if (this->energyPoints <= 0 || this->hitPoints <= 0)
+        return ;
     std::cout << "FragTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
     this->energyPoints--;
 }
 
 void FragTrap::highFivesGuys(){
+    if (this->energyPoints <= 0 || this->hitPoints <= 0)
+        return ;
     std::cout << "Positive high fives request" << std::endl;
     this->energyPoints--;
 }
