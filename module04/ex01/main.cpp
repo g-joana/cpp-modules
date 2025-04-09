@@ -3,7 +3,6 @@
 #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <cstdlib>
 #include <ostream>
 
 int main() {
