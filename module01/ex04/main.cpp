@@ -47,5 +47,5 @@ int main(int argc, char **argv) {
     }
     inputFile.close();
     outputFile.close();
-    std::cout << "file copied to file.replaced replacing s1 for s2!" << std::endl;
+    std::cout << argv[1] << " copied to " << fileNameOut << ", replacing s1 for s2!" << std::endl;
 }
