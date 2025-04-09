@@ -18,6 +18,7 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap& src) {
+    std::cout << "ClapTrap copy assignment operator overload called" << std::endl;
     if(this == &src)
         return *this;
     this->name = src.name;

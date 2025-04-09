@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include <iostream>
 
 ClapTrap::ClapTrap(std::string name) {
     std::cout << "ClapTrap constructor called" << std::endl;
@@ -18,6 +19,7 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap& ClapTrap::operator=(ClapTrap& src) {
+    std::cout << "ClapTrap copy assignment operator overload called" << std::endl;
     if(this == &src)
         return *this;
     this->name = src.name;
