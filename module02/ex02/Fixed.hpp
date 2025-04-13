@@ -14,6 +14,7 @@ class Fixed {
         Fixed(int n);
         Fixed(float n);
         Fixed(const Fixed& src);
+        //overload =
         ~Fixed();
 
         Fixed&  operator=(const Fixed& src);

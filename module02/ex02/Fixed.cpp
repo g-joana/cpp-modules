@@ -39,6 +39,8 @@ Fixed::Fixed(const Fixed& src) {
     // copy assignment operator
 }
 
+//overload =
+
 // destructor
 Fixed::~Fixed() {
     // std::cout << "Destructor called" << std::endl;
