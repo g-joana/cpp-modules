@@ -23,10 +23,12 @@ Fixed::Fixed(const Fixed& src) {
     std::cout << "Copy constructor called" << std::endl;
     // this->number = src.number;
     *this = src;
-    // copy assignment operator
 }
 
-//overload =
+Fixed&  Fixed::operator=(Fixed& src) {
+    this->number = src.getRawBits();
+    return *this;
+}
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;

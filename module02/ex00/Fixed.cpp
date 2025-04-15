@@ -10,7 +10,11 @@ Fixed::Fixed(Fixed& copy) {
     this->number = copy.getRawBits();
 }
 
-//overload =
+Fixed&  Fixed::operator=(Fixed& src) {
+    std::cout << "Copy assignment operator called" << std::endl;
+    this->number = src.getRawBits();
+    return *this;
+}
 
 Fixed::~Fixed() {
     std::cout << "Destructor called" << std::endl;

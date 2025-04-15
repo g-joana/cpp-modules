@@ -10,7 +10,7 @@ class Fixed {
     public:
         Fixed();
         Fixed(Fixed& copy);
-        //overload =
+        Fixed& operator=(Fixed& src);
         ~Fixed();
 
         void setRawBits( int const raw );
