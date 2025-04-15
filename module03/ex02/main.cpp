@@ -9,7 +9,7 @@ int main() {
     FragTrap fourth(third);
     
     first.attack("scav");
-    second.takeDamage(3); // first.attackDamage
+    second.takeDamage(3);
     // second.printStatus();
 
     second.attack("clap");
