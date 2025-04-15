@@ -5,11 +5,11 @@ int main() {
     ClapTrap second("second");
     
     first.attack("second");
-    second.takeDamage(3); // first.attackDamage
+    second.takeDamage(3);
     // second.printStatus();
 
     second.attack("first");
-    first.takeDamage(4);
+    first.takeDamage(0);
     // first.printStatus();
 
     second.beRepaired(3);

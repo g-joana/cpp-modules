@@ -6,7 +6,7 @@ int main() {
     ScavTrap second("scav");
     
     first.attack("scav");
-    second.takeDamage(3); // first.attackDamage
+    second.takeDamage(3);
     // second.printStatus();
 
     second.attack("clap");
