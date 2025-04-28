@@ -17,6 +17,7 @@ class Fixed {
         Fixed& operator=(Fixed& src);
         ~Fixed();
 
+        Fixed&  operator=(const Fixed &src);
         bool    operator>(const Fixed& src);
         bool    operator<(const Fixed& src);
         bool    operator>=(const Fixed& src);
