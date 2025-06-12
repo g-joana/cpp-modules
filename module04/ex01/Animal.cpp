@@ -12,7 +12,7 @@ Animal::Animal(std::string type){
 
 Animal::Animal(Animal& src){
     std::cout << "Animal copy constructor" << std::endl;
-    this->type = src.type;
+    *this = src;
 }
 
 Animal::~Animal() {
@@ -22,7 +22,7 @@ Animal::~Animal() {
 Animal& Animal::operator=(Animal& src) {
     if (this == &src)
         return src;
-    this->type = src.type;
+    *this = src;
     return *this;
 }
 
