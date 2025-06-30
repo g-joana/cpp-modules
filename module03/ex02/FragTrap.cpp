@@ -1,6 +1,5 @@
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
-#include <string>
 
 FragTrap::FragTrap(std::string name): ClapTrap(name) {
     std::cout << "FragTrap constructor called" << std::endl;
@@ -10,7 +9,7 @@ FragTrap::FragTrap(std::string name): ClapTrap(name) {
     this->attackDamage = 30;
 }
 
-FragTrap::FragTrap(FragTrap& src): ClapTrap(src) {
+FragTrap::FragTrap(const FragTrap& src): ClapTrap(src) {
     std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
@@ -18,7 +17,7 @@ FragTrap::~FragTrap() {
     std::cout << "FragTrap destructor called" << std::endl;
 }
 
-FragTrap& FragTrap::operator=(FragTrap& src) {
+FragTrap& FragTrap::operator=(const FragTrap& src) {
     std::cout << "FragTrap copy assignment operator overload called" << std::endl;
     if(this == &src)
         return *this;
@@ -30,9 +29,9 @@ FragTrap& FragTrap::operator=(FragTrap& src) {
 }
 
 void FragTrap::attack(const std::string& target){
+    std::cout << "FragTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
         return ;
-    std::cout << "FragTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
     this->energyPoints--;
 }
 

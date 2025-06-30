@@ -1,12 +1,11 @@
 #include "Fixed.hpp"
-#include <ostream>
 // https://en.cppreference.com/w/cpp/language/operators
 // https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html
 // https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
 
 Fixed::Fixed() {
-    this->number = 0;
     std::cout << "Default constructor called" << std::endl;
+    this->number = 0;
 }
 
 Fixed::Fixed(const int n) {
@@ -21,13 +20,7 @@ Fixed::Fixed(const float n) {
 
 Fixed::Fixed(const Fixed& src) {
     std::cout << "Copy constructor called" << std::endl;
-    // this->number = src.number;
-    *this = src;
-}
-
-Fixed&  Fixed::operator=(Fixed& src) {
-    this->number = src.getRawBits();
-    return *this;
+    this->number = src.number;
 }
 
 Fixed::~Fixed() {
@@ -42,20 +35,23 @@ Fixed&  Fixed::operator=(const Fixed &src) {
 }
 
 std::ostream &operator<<(std::ostream& stream, Fixed const& src ){
+    std::cout << "Insertion operator called" << std::endl;
     stream << src.toFloat();
     return stream;
 }
 
 int Fixed::toInt( void ) const {
+    std::cout << "toInt member function called" << std::endl;
     return this->number >> this->fractionBits; // getRawBits?
 }
 
 float Fixed::toFloat( void ) const {
+    std::cout << "toFloat member function called" << std::endl;
     return (float(this->getRawBits()) / (1 << fractionBits));
 }
 
 void Fixed::setRawBits(const int raw) {
-    std::cout << "getRawBits member function called" << std::endl;
+    std::cout << "setRawBits member function called" << std::endl;
     this->number = raw;
 }
 

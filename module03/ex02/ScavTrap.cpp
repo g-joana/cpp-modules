@@ -1,6 +1,5 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
-#include <string>
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
     std::cout << "ScavTrap constructor called" << std::endl;
@@ -10,7 +9,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
     this->attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(ScavTrap& src): ClapTrap(src.name) {
+ScavTrap::ScavTrap(const ScavTrap& src): ClapTrap(src.name) {
     std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
@@ -18,7 +17,7 @@ ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(ScavTrap& src) {
+ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
     std::cout << "ScavTrap copy assignment operator overload called" << std::endl;
     if(this == &src)
         return *this;

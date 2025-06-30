@@ -10,8 +10,8 @@ class WrongAnimal {
     public:
         WrongAnimal();
         WrongAnimal(std::string type);
-        WrongAnimal(WrongAnimal& src);
-        WrongAnimal& operator=(WrongAnimal& src);
+        WrongAnimal(const WrongAnimal& src);
+        WrongAnimal& operator=(const WrongAnimal& src);
         ~WrongAnimal();
 
         void setType(std::string type);

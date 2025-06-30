@@ -8,16 +8,19 @@ ClapTrap::ClapTrap(std::string name) {
     this->attackDamage = 0;
 }
 
-ClapTrap::ClapTrap(ClapTrap& src) {
+ClapTrap::ClapTrap(const ClapTrap& src) {
     std::cout << "ClapTrap copy constructor called" << std::endl;
-    *this = src;
+    this->name = src.name;
+    this->hitPoints = src.hitPoints;
+    this->energyPoints = src.energyPoints;
+    this->attackDamage = src.attackDamage;
 }
 
 ClapTrap::~ClapTrap() {
     std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(ClapTrap& src) {
+ClapTrap& ClapTrap::operator=(const ClapTrap& src) {
     std::cout << "ClapTrap copy assignment operator overload called" << std::endl;
     if(this == &src)
         return *this;

@@ -9,17 +9,27 @@ Brain::Brain(std::string idea){
     this->ideas[0] = idea;
 }
 
-Brain::Brain(Brain& src){
+Brain::Brain(const Brain& src){
     std::cout << "Brain copy constructor" << std::endl;
-    *this = src;
+    int i = 0;
+    while (i < 100)
+    {
+        this->ideas[i] = src.ideas[i];
+        i++;
+    }
 }
 
 Brain::~Brain() {
     std::cout << "Brain destructor" << std::endl;
 }
 
-Brain& Brain::operator=(Brain& src) {
+Brain& Brain::operator=(const Brain& src) {
     std::cout << "Brain copy assignment operator" << std::endl;
-    *this = src;
-    return src;
+    int i = 0;
+    while (i < 100)
+    {
+        this->ideas[i] = src.ideas[i];
+        i++;
+    }
+    return *this;
 }

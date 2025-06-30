@@ -1,16 +1,16 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() {
-    this->number = 0;
     std::cout << "Default constructor called" << std::endl;
+    this->number = 0;
 }
 
-Fixed::Fixed(Fixed& copy) {
+Fixed::Fixed(const Fixed& copy) {
     std::cout << "Copy constructor called" << std::endl;
     this->number = copy.getRawBits();
 }
 
-Fixed&  Fixed::operator=(Fixed& src) {
+Fixed&  Fixed::operator=(const Fixed& src) {
     std::cout << "Copy assignment operator called" << std::endl;
     this->number = src.getRawBits();
     return *this;

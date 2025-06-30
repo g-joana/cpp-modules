@@ -9,8 +9,8 @@ class Fixed {
         static const int fractionBits = 8;
     public:
         Fixed();
-        Fixed(Fixed& copy);
-        Fixed& operator=(Fixed& src);
+        Fixed(const Fixed& copy);
+        Fixed& operator=(const Fixed& src);
         ~Fixed();
 
         void setRawBits( int const raw );

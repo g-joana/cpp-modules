@@ -14,10 +14,9 @@ class Fixed {
         Fixed(int n);
         Fixed(float n);
         Fixed(const Fixed& src);
-        Fixed& operator=(Fixed& src);
+        Fixed&  operator=(const Fixed &src);
         ~Fixed();
 
-        Fixed&  operator=(const Fixed &src);
         bool    operator>(const Fixed& src);
         bool    operator<(const Fixed& src);
         bool    operator>=(const Fixed& src);

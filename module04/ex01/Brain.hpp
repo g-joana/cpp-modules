@@ -10,8 +10,8 @@ class Brain {
     public:
         Brain();
         Brain(std::string type);
-        Brain(Brain& src);
-        Brain& operator=(Brain& src);
+        Brain(const Brain& src);
+        Brain& operator=(const Brain& src);
         virtual ~Brain();
 };
 

@@ -4,7 +4,7 @@ Dog::Dog(): Animal("Dog") {
     std::cout << "Dog default constructor" << std::endl;
 }
 
-Dog::Dog(Dog& src): Animal("Dog"){
+Dog::Dog(const Dog& src): Animal("Dog"){
     std::cout << "Dog copy constructor" << std::endl;
     *this = src;
 }
@@ -13,10 +13,10 @@ Dog::~Dog() {
     std::cout << "Dog destructor" << std::endl;
 }
 
-Dog& Dog::operator=(Dog& src) {
+Dog& Dog::operator=(const Dog& src) {
     std::cout << "Dog copy assignment operator" << std::endl;
     if (this == &src)
-        return src;
+        return *this;
     this->type = src.type;
     return *this;
 }

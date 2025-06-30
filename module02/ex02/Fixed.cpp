@@ -1,5 +1,4 @@
 #include "Fixed.hpp"
-#include <ostream>
 // https://en.cppreference.com/w/cpp/language/operators
 // https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html
 // https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html
@@ -8,17 +7,18 @@
 
 // constructors
 Fixed::Fixed() {
+    std::cout << "Default constructor called" << std::endl;
     // std::cout << "Default constructor called" << std::endl;
     this->number = 0;
 }
 
 Fixed::Fixed(const int n) {
-    // std::cout << "Int constructor called" << std::endl;
+    std::cout << "Int constructor called" << std::endl;
     this->number = n << this->fractionBits;
 }
 
 Fixed::Fixed(const float n) {
-    // std::cout << "Float constructor called" << std::endl;
+    std::cout << "Float constructor called" << std::endl;
     // fixed    =   numero(5.579) * 256(1 << 8, 100000000) = 5279;
     // parte fracionada: ultimos 8 bits (579)
     // parte inteira: primeiros 24bits (5); int = 4bytes, 32bits - 8 
@@ -34,26 +34,18 @@ Fixed::Fixed(const float n) {
 
 Fixed::Fixed(const Fixed& src) {
     std::cout << "Copy constructor called" << std::endl;
-    // this->number = src.number;
-    *this = src;
-    // copy assignment operator
-}
-
-Fixed&  Fixed::operator=(Fixed& src) {
-    std::cout << "Copy assignment operator called" << std::endl;
-    this->number = src.getRawBits();
-    return *this;
+    this->number = src.number;
 }
 
 // destructor
 Fixed::~Fixed() {
-    // std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called" << std::endl;
 }
 
 // member funcs
 //  overloaded operators
 Fixed&  Fixed::operator=(const Fixed &src) {
-    // std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &src)
         this->number = src.number;
     return *this;
@@ -116,7 +108,7 @@ Fixed  Fixed::operator--(){
 
 //  convertion funcs
 int Fixed::toInt( void ) const {
-    return this->number >> this->fractionBits; // getRawBits?
+    return this->number >> this->fractionBits;
 }
 
 float Fixed::toFloat( void ) const {
@@ -125,16 +117,15 @@ float Fixed::toFloat( void ) const {
 
 //  getters and setters
 void Fixed::setRawBits(const int raw) {
-    // std::cout << "getRawBits member function called" << std::endl;
+    std::cout << "setRawBits member function called" << std::endl;
     this->number = raw;
 }
 
 int Fixed::getRawBits() const {
-    // std::cout << "getRawBits member function called" << std::endl;
+    std::cout << "getRawBits member function called" << std::endl;
     return this->number;
 }
 
-//  min and max
 Fixed&   Fixed::min(Fixed& a, Fixed& b){
     if (a < b)
         return a;

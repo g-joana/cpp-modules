@@ -10,9 +10,9 @@ class Cat: public Animal {
         std::string type;
     public:
         Cat();
-        Cat(Cat& src);
+        Cat(const Cat& src);
         ~Cat();
-        Cat& operator=(Cat& src);
+        Cat& operator=(const Cat& src);
         void makeSound() const;
 
 };
