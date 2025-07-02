@@ -38,6 +38,6 @@ void FragTrap::attack(const std::string& target){
 void FragTrap::highFivesGuys(){
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
         return ;
-    std::cout << "Positive high fives request" << std::endl;
+    std::cout << "Positive high-fives request" << std::endl;
     this->energyPoints--;
 }
