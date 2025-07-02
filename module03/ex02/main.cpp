@@ -16,6 +16,9 @@ int main() {
     first.takeDamage(4);
     // first.printStatus();
 
+    third.attack("clap");
+    first.takeDamage(4);
+
     second.beRepaired(3);
     // second.printStatus();
 

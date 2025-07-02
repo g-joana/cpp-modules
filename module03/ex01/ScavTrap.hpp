@@ -13,6 +13,8 @@ class ScavTrap : public ClapTrap {
         ScavTrap& operator=(const ScavTrap& src);
 
         void guardGate();
+        // a const function means this is const
+        // cannot modify any member variables unless they’re declared mutable
         void attack(const std::string& target);
 };
 

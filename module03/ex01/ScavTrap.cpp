@@ -29,15 +29,15 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src) {
 }
 
 void ScavTrap::attack(const std::string& target){
-    std::cout << "ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
         return ;
+    std::cout << "ScavTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
     this->energyPoints--;
 }
 
 void ScavTrap::guardGate(){
-    std::cout << "ScavTrap is now on Gate keeper mode!" << std::endl;
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
         return ;
+    std::cout << "ScavTrap is now on Gate Keeper mode!" << std::endl;
     this->energyPoints--;
 }
