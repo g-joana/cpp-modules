@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-Cat::Cat(): Animal("Cat") {
+Cat::Cat(): AAnimal("Cat") {
     std::cout << "Cat default constructor" << std::endl;
     // zero-initializes (builtin types)
     this->brain = new Brain();
@@ -9,7 +9,7 @@ Cat::Cat(): Animal("Cat") {
     // this->brain = new Brain;
 }
 
-Cat::Cat(const Cat& src): Animal(src) {
+Cat::Cat(const Cat& src): AAnimal(src) {
     std::cout << "Cat copy constructor" << std::endl;
     this->type = src.type;
     this->brain = src.brain;

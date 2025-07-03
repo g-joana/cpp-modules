@@ -1,14 +1,13 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-// add const to functions
 // how to make animal non instantiable?
 int main() {
     int i = 0;
-    Animal *animals[10];
+    AAnimal *animals[10];
 
     while (i < 10)
     {

@@ -1,6 +1,6 @@
 NAME = animal
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 COMPILER = g++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

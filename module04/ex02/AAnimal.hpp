@@ -4,21 +4,20 @@
 #include <string>
 #include <iostream>
 
-class Animal {
+class AAnimal {
     protected:
         std::string type;
     public:
-        Animal();
-        Animal(std::string type);
-        Animal(const Animal& src);
-        Animal& operator=(const Animal& src);
-        virtual ~Animal();
+        AAnimal();
+        AAnimal(std::string type);
+        AAnimal(const AAnimal& src);
+        AAnimal& operator=(const AAnimal& src);
+        virtual ~AAnimal();
 
-        //??
         void setType(std::string type);
         const std::string& getType()const ;
 
-        virtual void makeSound()const;
+        virtual void makeSound() const = 0;
 };
 
 #endif
