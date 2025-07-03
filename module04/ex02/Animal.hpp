@@ -14,6 +14,7 @@ class Animal {
         Animal& operator=(const Animal& src);
         virtual ~Animal();
 
+        //??
         void setType(std::string type);
         const std::string& getType()const ;
 
