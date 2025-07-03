@@ -6,23 +6,23 @@ Animal::Animal(){
 }
 
 Animal::Animal(std::string type){
-    std::cout << "Animal default constructor" << std::endl;
+    std::cout << "Animal constructor" << std::endl;
     this->type = type;
 }
 
-Animal::Animal(Animal& src){
+Animal::Animal(const Animal& src){
     std::cout << "Animal copy constructor" << std::endl;
-    *this = src;
+    this->type = src.type;
 }
 
 Animal::~Animal() {
     std::cout << "Animal destructor" << std::endl;
 }
 
-Animal& Animal::operator=(Animal& src) {
+Animal& Animal::operator=(const Animal& src) {
     if (this == &src)
-        return src;
-    *this = src;
+        return *this;
+    this->type = src.type;
     return *this;
 }
 

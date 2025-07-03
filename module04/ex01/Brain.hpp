@@ -13,6 +13,8 @@ class Brain {
         Brain(const Brain& src);
         Brain& operator=(const Brain& src);
         virtual ~Brain();
+        void setIdea(std::string idea);
+        void printIdeas();
 };
 
 #endif

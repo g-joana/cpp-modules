@@ -3,31 +3,36 @@
 #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <ostream>
 
+// why cant i access dog's and cat's brain
 int main() {
-    // Cat tchego;
-    // Dog *ozzy = new Dog;
-    // // Animal * ozzy = new Dog(); // why it doesnt work?
-    //
-    // std::cout << "tchego: ";
-    // tchego.makeSound();
-    // std::cout << "ozzy: ";
-    // ozzy->makeSound();
-    // delete ozzy;
+    int i = 0;
+    Animal *animals[10];
 
-    const WrongAnimal* meta = new WrongAnimal();
-    const WrongAnimal* i = new WrongCat();
-    // const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    delete i;
-    delete j;
-    delete meta;
+    while (i < 10)
+    {
+        if (i >= 5)
+            animals[i] = new Cat();
+        else
+            animals[i] = new Dog();
+        i++;
+    }
+    i = 0;
+    while (i < 10)
+    {
+        animals[i]->makeSound();
+        i++;
+    }
+    while (i < 10)
+    {
+        animals[i]->makeSound();
+        i++;
+    }
+    i = 0;
+    while (i < 10)
+    {
+        delete animals[i];
+        i++;
+    }
     return 0;
 }

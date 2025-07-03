@@ -12,11 +12,13 @@ class Dog: public Animal {
         Brain *brain;
     public:
         Dog();
-        Dog(Dog& src);
+        Dog(const Dog& src);
         ~Dog();
-        Dog& operator=(Dog& src);
+        Dog& operator=(const Dog& src);
         void makeSound() const;
 
+        void setIdea(std::string idea);
+        void printIdeas();
 };
 
 #endif

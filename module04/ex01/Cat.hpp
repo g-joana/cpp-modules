@@ -12,11 +12,13 @@ class Cat: public Animal {
         Brain *brain;
     public:
         Cat();
-        Cat(Cat& src);
+        Cat(const Cat& src);
         ~Cat();
-        Cat& operator=(Cat& src);
+        Cat& operator=(const Cat& src);
         void makeSound() const;
 
+        void setIdea(std::string idea);
+        void printIdeas();
 };
 
 #endif
