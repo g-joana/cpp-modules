@@ -4,10 +4,12 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-// why cant i access dog's and cat's brain
 int main() {
     int i = 0;
     Animal *animals[10];
+    Cat gato;
+    gato.setIdea("miau?");
+    gato.printIdeas();
 
     while (i < 10)
     {

@@ -4,10 +4,13 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-// how to make animal non instantiable?
 int main() {
     int i = 0;
     AAnimal *animals[10];
+    // AAnimal animal;
+    Cat gato;
+    gato.setIdea("miau?");
+    gato.printIdeas();
 
     while (i < 10)
     {
