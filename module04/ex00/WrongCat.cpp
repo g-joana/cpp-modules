@@ -1,4 +1,5 @@
 #include "WrongCat.hpp"
+#include <iostream>
 
 WrongCat::WrongCat(): WrongAnimal("Wrong Cat") {
     std::cout << "Wrong Cat default constructor" << std::endl;
@@ -6,7 +7,6 @@ WrongCat::WrongCat(): WrongAnimal("Wrong Cat") {
 
 WrongCat::WrongCat(const WrongCat& src): WrongAnimal(src) {
     std::cout << "Wrong Cat copy constructor" << std::endl;
-    // *this = src;
 }
 
 WrongCat::~WrongCat() {

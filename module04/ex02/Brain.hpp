@@ -2,17 +2,17 @@
 # define BRAIN_HPP
 
 #include <string>
-#include <iostream>
 
 class Brain {
     private:
         std::string ideas[100];
     public:
         Brain();
-        Brain(std::string type);
         Brain(const Brain& src);
         Brain& operator=(const Brain& src);
         virtual ~Brain();
+
+        Brain(std::string type);
         void setIdea(std::string idea);
         void printIdeas() const;
 };

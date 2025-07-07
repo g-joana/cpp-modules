@@ -3,8 +3,6 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
-#include <string>
-#include <iostream>
 
 class Dog: public Animal {
     protected:
@@ -13,10 +11,10 @@ class Dog: public Animal {
     public:
         Dog();
         Dog(const Dog& src);
-        ~Dog();
         Dog& operator=(const Dog& src);
-        void makeSound() const;
+        ~Dog();
 
+        void makeSound() const;
         void setIdea(std::string idea);
         void printIdeas() const;
 };

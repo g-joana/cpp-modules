@@ -1,10 +1,8 @@
-#include "Animal.hpp"
 #include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+// #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <cstdlib>
-#include <ostream>
+#include <iostream>
 
 int main() {
     // Cat tchego;

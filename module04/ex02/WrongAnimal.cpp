@@ -1,4 +1,5 @@
 #include "WrongAnimal.hpp"
+#include <iostream>
 
 WrongAnimal::WrongAnimal(){
     std::cout << "Wrong Animal default constructor" << std::endl;

@@ -1,5 +1,5 @@
 #include "Brain.hpp"
-#include <string>
+#include <iostream>
 
 Brain::Brain(){
     std::cout << "Brain default constructor" << std::endl;
@@ -25,7 +25,6 @@ Brain::~Brain() {
 }
 
 Brain& Brain::operator=(const Brain& src) {
-    std::cout << "Brain copy assignment operator" << std::endl;
     int i = 0;
     while (i < 100)
     {

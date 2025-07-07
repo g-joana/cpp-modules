@@ -1,4 +1,5 @@
 #include "WrongCat.hpp"
+#include <iostream>
 
 WrongCat::WrongCat(): WrongAnimal("Wrong Cat") {
     std::cout << "Wrong Cat default constructor" << std::endl;

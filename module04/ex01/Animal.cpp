@@ -1,4 +1,5 @@
 #include "Animal.hpp"
+#include <iostream>
 
 Animal::Animal(){
     std::cout << "Animal default constructor" << std::endl;

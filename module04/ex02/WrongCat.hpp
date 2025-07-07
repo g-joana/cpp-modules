@@ -2,8 +2,6 @@
 # define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
-#include <string>
-#include <iostream>
 
 class WrongCat: public WrongAnimal {
     protected:
@@ -11,8 +9,9 @@ class WrongCat: public WrongAnimal {
     public:
         WrongCat();
         WrongCat(const WrongCat& src);
-        ~WrongCat();
         WrongCat& operator=(const WrongCat& src);
+        ~WrongCat();
+
         void makeSound() const;
 };
 

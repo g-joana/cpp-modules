@@ -1,12 +1,9 @@
 #include "Cat.hpp"
-#include "Brain.hpp"
+#include <iostream>
 
 Cat::Cat(): AAnimal("Cat") {
     std::cout << "Cat default constructor" << std::endl;
-    // zero-initializes (builtin types)
     this->brain = new Brain();
-    // default-initializes - memory garbage
-    // this->brain = new Brain;
 }
 
 Cat::Cat(const Cat& src): AAnimal(src) {
@@ -21,7 +18,6 @@ Cat::~Cat() {
 }
 
 Cat& Cat::operator=(const Cat& src) {
-    std::cout << "Cat copy assignment operator" << std::endl;
     if (this == &src)
         return *this;
     this->type = src.type;
