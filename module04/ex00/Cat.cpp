@@ -7,6 +7,7 @@ Cat::Cat(): Animal("Cat") {
 
 Cat::Cat(const Cat& src): Animal("Cat") {
     std::cout << "Cat copy constructor" << std::endl;
+    this->type = src.type;
 }
 
 Cat::~Cat() {

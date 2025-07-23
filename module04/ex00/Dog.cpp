@@ -7,7 +7,7 @@ Dog::Dog(): Animal("Dog") {
 
 Dog::Dog(const Dog& src): Animal("Dog"){
     std::cout << "Dog copy constructor" << std::endl;
-    *this = src;
+    this->type = src.type;
 }
 
 Dog::~Dog() {
