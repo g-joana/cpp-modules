@@ -20,6 +20,7 @@ WrongAnimal::~WrongAnimal() {
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src) {
+    std::cout << "Wrong Animal copy assignment operator" << std::endl;
     if (this == &src)
         return *this;
     this->type = src.type;
@@ -27,10 +28,12 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src) {
 }
 
 void WrongAnimal::setType(std::string type) {
+    std::cout << "Wrong Animal setType" << std::endl;
     this->type = type;
 }
 
 const std::string& WrongAnimal::getType() const{
+    std::cout << "Wrong Animal getType" << std::endl;
     return  this->type;
 }
 

@@ -1,5 +1,3 @@
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
@@ -16,17 +14,37 @@ int main() {
     // ozzy->makeSound();
     // delete ozzy;
 
-    const WrongAnimal* wrong = new WrongAnimal();
-    // const WrongAnimal* i = new WrongCat();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
+    // const Animal* dog = new Dog();
+    // Dog dog2;
+    // Dog *dog3 = new Dog();
+    // Dog *dog4(dog3);
+    // std::cout << dog->getType() << " " << std::endl;
+    // dog->makeSound();
+    // delete dog;
+
+    std::cout << "> new wrong animal (wrong):" << std::endl;
+    const WrongAnimal* wrong = new WrongCat();
+    std::cout << "> new cat (cat):" << std::endl;
+    Animal* cat = new Cat();
+    std::cout << "> new copy cat (copy_cat):" << std::endl;
+    Animal* copy_cat(cat);
+    std::cout << "> new cat (cat2):" << std::endl;
+    const Animal* cat2;
+    std::cout << "> cat2 = cat :" << std::endl;
+    cat2 = cat;
+    std::cout << "> type of cat :" << std::endl;
+    std::cout << cat->getType() << std::endl;
+    std::cout << "> cat says :" << std::endl;
+    cat->makeSound();
+    std::cout << "> copy_cat says :" << std::endl;
+    copy_cat->makeSound();
+    std::cout << "> cat2 says :" << std::endl;
+    cat2->makeSound();
+    std::cout << "> wrong says :" << std::endl;
     wrong->makeSound();
-    delete i;
-    delete j;
+    std::cout << "> delete cat :" << std::endl;
+    delete cat;
+    std::cout << "> delete wrong :" << std::endl;
     delete wrong;
     return 0;
 }

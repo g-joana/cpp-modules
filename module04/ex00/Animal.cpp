@@ -20,6 +20,7 @@ Animal::~Animal() {
 }
 
 Animal& Animal::operator=(const Animal& src) {
+    std::cout << "Animal copy assignment operator" << std::endl;
     if (this == &src)
         return *this;
     this->type = src.type;
@@ -27,10 +28,12 @@ Animal& Animal::operator=(const Animal& src) {
 }
 
 void Animal::setType(std::string type) {
+    std::cout << "Animal copy assignment operator" << std::endl;
     this->type = type;
 }
 
 const std::string& Animal::getType() const{
+    std::cout << "Animal getType" << std::endl;
     return  this->type;
 }
 
