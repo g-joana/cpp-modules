@@ -56,7 +56,7 @@ int main() {
     std::cout << " > delete cat :" << std::endl;
     delete cat;
     std::cout << " > delete wrongCat :" << std::endl;
-    // deletes wrong animal, does not delete wrong cat;
     delete wrongCat;
+    // deletes wrong animal and does not delete wrong cat, because wrong animal does not have a virtual destructor
     return 0;
 }
