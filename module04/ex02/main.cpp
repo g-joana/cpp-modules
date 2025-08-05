@@ -2,11 +2,13 @@
 // #include "WrongCat.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include <iostream>
 
 int main() {
     int i = 0;
     AAnimal *animals[10];
     // AAnimal animal;
+    // (AAnimal not instantiable)
     Cat gato;
     gato.setIdea("miau?");
     gato.printIdeas();
@@ -19,6 +21,7 @@ int main() {
             animals[i] = new Dog();
         i++;
     }
+    std::cout << animals[5]->getType() << std::endl;
     i = 0;
     while (i < 10)
     {
