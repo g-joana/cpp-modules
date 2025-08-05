@@ -14,15 +14,25 @@ int main() {
     // ozzy->makeSound();
     // delete ozzy;
 
-    // const Animal* dog = new Dog();
+    std::cout << std::endl;
+    std::cout << "DOG" << std::endl;
+    std::cout << "CONTRUCTORS" << std::endl;
+    const Animal* dog = new Dog();
+    Dog *dog3 = new Dog();
     // Dog dog2;
-    // Dog *dog3 = new Dog();
     // Dog *dog4(dog3);
     // std::cout << dog->getType() << " " << std::endl;
-    // dog->makeSound();
-    // delete dog;
+    std::cout << std::endl;
+    std::cout << "MEMBER FUNCS" << std::endl;
+    dog3->makeSound();
+    dog->makeSound();
+    std::cout << std::endl;
+    std::cout << "DELETE" << std::endl;
+    delete dog;
+    delete dog3;
 
     std::cout << std::endl;
+    std::cout << "CAT" << std::endl;
     std::cout << "CONTRUCTORS" << std::endl;
     std::cout << " > new wrong animal (wrongCat):" << std::endl;
     const WrongAnimal* wrongCat = new WrongCat();
@@ -35,7 +45,7 @@ int main() {
 
     std::cout << std::endl;
     std::cout << "MEMBER FUNCS" << std::endl;
-    std::cout << " > cat2 = cat :" << std::endl;
+    std::cout << " > cat2 = cat" << std::endl;
     cat2 = cat;
     std::cout << " > type of cat2 :" << std::endl;
     std::cout << cat2->getType() << std::endl;
