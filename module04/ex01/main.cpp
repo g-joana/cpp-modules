@@ -5,42 +5,16 @@
 #include <iostream>
 
 int main() {
-    int i = 0;
-    Animal *animals[10];
-    // Cat gato;
-    // gato.setIdea("miau?");
-    // gato.printIdeas();
 
-    std::cout << std::endl;
-    std::cout << "CONTRUCTORS" << std::endl;
-    while (i < 10)
+    Cat cat = Cat();
     {
-        if (i >= 5)
-            animals[i] = new Cat();
-        else
-            animals[i] = new Dog();
-        i++;
+        Cat temp = cat;
+        temp.makeSound();
     }
-    std::cout << std::endl;
-    std::cout << "MAKE SOUND" << std::endl;
-    i = 0;
-    while (i < 10)
+    Dog dog = Dog();
     {
-        animals[i]->makeSound();
-        i++;
-    }
-    while (i < 10)
-    {
-        animals[i]->makeSound();
-        i++;
-    }
-    std::cout << std::endl;
-    std::cout << "DELETE" << std::endl;
-    i = 0;
-    while (i < 10)
-    {
-        delete animals[i];
-        i++;
+        Dog temp = Dog();
+        temp.makeSound();
     }
     return 0;
 }
