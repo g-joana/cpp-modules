@@ -9,7 +9,7 @@ Cat::Cat(): AAnimal("Cat") {
 Cat::Cat(const Cat& src): AAnimal(src) {
     std::cout << "Cat copy constructor" << std::endl;
     this->type = src.type;
-    this->brain = src.brain;
+    this->brain = new Brain(*src.brain);
 }
 
 Cat::~Cat() {
@@ -21,7 +21,7 @@ Cat& Cat::operator=(const Cat& src) {
     if (this == &src)
         return *this;
     this->type = src.type;
-    this->brain = src.brain;
+    *this->brain = *src.brain;
     return *this;
 }
 
