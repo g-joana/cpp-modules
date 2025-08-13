@@ -52,5 +52,6 @@ int main() {
         delete animals[i];
         i++;
     }
+    std::cout << "END" << std::endl;
     return 0;
 }
