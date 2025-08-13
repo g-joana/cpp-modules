@@ -1,7 +1,7 @@
 NAME = animal
 
 SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
-COMPILER = g++
+COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
