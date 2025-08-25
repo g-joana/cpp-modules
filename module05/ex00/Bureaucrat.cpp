@@ -27,16 +27,24 @@ std::string Bureaucrat::getName()const {
     return this->name;
 }
 
-void Bureaucrat::operator++() {
+Bureaucrat& Bureaucrat::operator++() {
     if (grade == 1)
         throw Bureaucrat::GradeTooHighException();
     this->grade--;
+    return *this;
 }
 
-void Bureaucrat::operator--() {
+Bureaucrat& Bureaucrat::operator--() {
     if (grade == 150)
         throw Bureaucrat::GradeTooLowException();
     this->grade++;
+    return *this;
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src) {
+    this->grade = src.grade;
+    // name is const, cannot be altered
+    return *this;
 }
 
 std::ostream& operator<<(std::ostream& stream, Bureaucrat &obj) {

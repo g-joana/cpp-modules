@@ -11,12 +11,13 @@ class Bureaucrat {
     public:
         Bureaucrat(std::string name, int grade);
         ~Bureaucrat();
+        Bureaucrat& operator=(const Bureaucrat& src);
         std::string GradeTooHighException();
         std::string GradeTooLowException();
         int getGrade()const;
         std::string getName()const;
-        void operator++();
-        void operator--();
+        Bureaucrat& operator++();
+        Bureaucrat& operator--();
 };
 
 std::ostream& operator<<(std::ostream& stream, Bureaucrat &src);
