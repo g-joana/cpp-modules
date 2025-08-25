@@ -9,7 +9,7 @@ Dog::Dog(): AAnimal("Dog") {
 Dog::Dog(const Dog& src): AAnimal("Dog"){
     std::cout << "Dog copy constructor" << std::endl;
     this->type = src.type;
-    this->brain = src.brain;
+    this->brain = new Brain(*src.brain);
 }
 
 Dog::~Dog() {
@@ -21,7 +21,7 @@ Dog& Dog::operator=(const Dog& src) {
     if (this == &src)
         return *this;
     this->type = src.type;
-    this->brain = src.brain;
+    *this->brain = *src.brain;
     return *this;
 }
 

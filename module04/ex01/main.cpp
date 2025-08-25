@@ -5,12 +5,22 @@
 #include <iostream>
 
 int main() {
+
+    Cat cat = Cat();
+    {
+        Cat temp = cat;
+        temp.makeSound();
+    }
+    Dog dog = Dog();
+    {
+        Dog temp = Dog();
+        temp.makeSound();
+    }
     int i = 0;
     Animal *animals[10];
     // Cat gato;
     // gato.setIdea("miau?");
     // gato.printIdeas();
-
     std::cout << std::endl;
     std::cout << "CONTRUCTORS" << std::endl;
     while (i < 10)
@@ -42,5 +52,6 @@ int main() {
         delete animals[i];
         i++;
     }
+    std::cout << "END" << std::endl;
     return 0;
 }
