@@ -1,6 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+#include <exception>
 #include <ostream>
 #include <string>
 
@@ -12,8 +13,14 @@ class Bureaucrat {
         Bureaucrat(std::string name, int grade);
         ~Bureaucrat();
         Bureaucrat& operator=(const Bureaucrat& src);
-        std::string GradeTooHighException();
-        std::string GradeTooLowException();
+        class GradeTooHighException:public std::exception {
+            public:
+                const char *what() const throw();
+        };
+        class GradeTooLowException:public std::exception {
+            public:
+                const char *what() const throw();
+        };
         int getGrade()const;
         std::string getName()const;
         Bureaucrat& operator++();

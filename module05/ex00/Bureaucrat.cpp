@@ -11,12 +11,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
 Bureaucrat::~Bureaucrat() {
 }
 
-std::string Bureaucrat::GradeTooHighException() {
-    return this->getName() + "'s grade too high!";
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
+    return "grade too high!";
 }
 
-std::string Bureaucrat::GradeTooLowException() {
-    return this->getName() + "'s grade too low!";
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
+    return "grade too low!";
 }
 
 int Bureaucrat::getGrade()const {
