@@ -19,8 +19,8 @@ int main() {
             --temp;
             std::cout << temp << std::endl;
         }
-        catch (const std::string &exception) {
-            std::cout << "Error: " << exception << std::endl;
+        catch (const std::exception &exception) {
+            std::cout << "Error: " << exception.what() << std::endl;
             continue ;
         }
     }

@@ -1,7 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include "AForm.hpp"
+#include <exception>
 #include <ostream>
 #include <string>
 
@@ -11,9 +11,10 @@ class Bureaucrat {
         int grade;
     public:
         Bureaucrat(std::string name, int grade);
+        Bureaucrat(const Bureaucrat& other);
         ~Bureaucrat();
         Bureaucrat& operator=(const Bureaucrat& src);
-       class GradeTooHighException:public std::exception {
+        class GradeTooHighException:public std::exception {
             public:
                 const char *what() const throw();
         };
@@ -25,9 +26,8 @@ class Bureaucrat {
         std::string getName()const;
         Bureaucrat& operator++();
         Bureaucrat& operator--();
-        void signForm(AForm& form);
 };
 
-std::ostream& operator<<(std::ostream& stream, Bureaucrat &src);
+std::ostream& operator<<(std::ostream& stream, const Bureaucrat &src);
 
 #endif
