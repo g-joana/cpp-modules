@@ -14,6 +14,10 @@ Form::Form(std::string name, int gradeToSign, int gradeToExec) : name(name), gra
     }
 }
 
+Form::Form(Form& src) : name(src.name), gradeToSign(src.gradeToSign), gradeToExec(src.gradeToExec) {
+    this->isSigned = false;
+}
+
 Form& Form::operator=(const Form& src) {
     if (this != &src) {
         this->isSigned = src.isSigned;

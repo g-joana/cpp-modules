@@ -14,6 +14,7 @@ class Form {
 
     public:
         Form(std::string name, int gradeToSign, int gradeToExec);
+        Form(Form& src);
         ~Form();
         Form& operator=(const Form& src);
         class GradeTooHighException:public std::exception {
