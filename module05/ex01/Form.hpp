@@ -16,9 +16,14 @@ class Form {
         Form(std::string name, int gradeToSign, int gradeToExec);
         ~Form();
         Form& operator=(const Form& src);
-        std::string GradeTooHighException(std::string bureaucrat) const;
-        std::string GradeTooLowException(std::string bureaucrat) const;
-
+        class GradeTooHighException:public std::exception {
+            public:
+                const char *what() const throw();
+        };
+        class GradeTooLowException:public std::exception {
+            public:
+                const char *what() const throw();
+        };
         std::string getName() const;
         bool getIsSigned() const;
         int getGradeToSign() const;
