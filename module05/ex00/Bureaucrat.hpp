@@ -9,23 +9,27 @@ class Bureaucrat {
     private:
         const std::string name;
         int grade;
+        Bureaucrat();
     public:
-        Bureaucrat(std::string name, int grade);
+        Bureaucrat(const std::string& name, int grade);
         Bureaucrat(const Bureaucrat& other);
         ~Bureaucrat();
         Bureaucrat& operator=(const Bureaucrat& src);
-        class GradeTooHighException:public std::exception {
+
+        class GradeTooHighException : public std::exception {
             public:
                 const char *what() const throw();
         };
-        class GradeTooLowException:public std::exception {
+        class GradeTooLowException : public std::exception {
             public:
                 const char *what() const throw();
         };
-        int getGrade()const;
-        std::string getName()const;
-        Bureaucrat& operator++();
-        Bureaucrat& operator--();
+
+        std::string getName() const;
+        int getGrade() const;
+
+        void incrementGrade();
+        void decrementGrade();
 };
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat &src);
