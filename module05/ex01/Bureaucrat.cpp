@@ -1,17 +1,25 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
+Bureaucrat::Bureaucrat() : name("default"), grade(150) {}
+
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(grade) {
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
     if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade) {
-}
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade) {}
 
-Bureaucrat::~Bureaucrat() {
+Bureaucrat::~Bureaucrat() {}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src) {
+    if (this != &src) {
+        this->grade = src.grade;
+    }
+    return *this;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
@@ -22,37 +30,36 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
     return "grade too low!";
 }
 
-int Bureaucrat::getGrade()const {
-    return this->grade;
-}
-
-std::string Bureaucrat::getName()const {
+std::string Bureaucrat::getName() const {
     return this->name;
 }
 
-Bureaucrat& Bureaucrat::operator++() {
+int Bureaucrat::getGrade() const {
+    return this->grade;
+}
+
+void Bureaucrat::incrementGrade() {
     if (grade == 1)
         throw Bureaucrat::GradeTooHighException();
     this->grade--;
-    return *this;
 }
 
-Bureaucrat& Bureaucrat::operator--() {
+void Bureaucrat::decrementGrade() {
     if (grade == 150)
         throw Bureaucrat::GradeTooLowException();
     this->grade++;
-    return *this;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& src) {
-    if (this != &src) {
-        this->grade = src.grade;
-        // name is const, cannot be altered
+void Bureaucrat::signForm(Form& form) {
+    try {
+        form.beSigned(*this);
+        std::cout << name << " signed " << form.getName() << "." << std::endl;
+    } catch (std::exception &e) {
+        std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
     }
-    return *this;
 }
 
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat &obj) {
-    stream << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+    stream << obj.getName() << ", bureaucrat grade " << obj.getGrade() << ".";
     return stream;
 }
